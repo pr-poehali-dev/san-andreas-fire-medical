@@ -3,7 +3,7 @@ import About from "@/components/About";
 import Instructions from "@/components/Instructions";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Icon } from "@/components/ui/icon";
+import Icon from "@/components/ui/icon";
 
 const Index = () => {
   return (
