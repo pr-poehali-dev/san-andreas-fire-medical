@@ -34,10 +34,25 @@ const Application = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Здесь будет логика отправки формы
-    console.log("Form submitted:", formData);
+
+    // Создаем заявку с уникальным ID и статусом
+    const application = {
+      id: Date.now().toString(),
+      ...formData,
+      status: "pending",
+      submittedAt: new Date().toISOString(),
+    };
+
+    // Сохраняем в localStorage
+    const existingApplications = JSON.parse(
+      localStorage.getItem("applications") || "[]",
+    );
+    existingApplications.push(application);
+    localStorage.setItem("applications", JSON.stringify(existingApplications));
+
+    console.log("Application submitted for review:", application);
     alert(
-      "Заявление успешно отправлено! Мы свяжемся с вами в течение 24 часов.",
+      "Заявление отправлено на проверку! Статус: 'Ожидает рассмотрения'. Мы свяжемся с вами в течение 24 часов.",
     );
   };
 
