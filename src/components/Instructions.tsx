@@ -115,7 +115,11 @@ const Instructions = () => {
               <p className="text-gray-700 mb-6">
                 Нажмите на кнопку ниже, чтобы начать процесс подачи заявления
               </p>
-              <Button size="lg" className="w-full bg-red-600 hover:bg-red-700">
+              <Button
+                size="lg"
+                className="w-full bg-red-600 hover:bg-red-700"
+                onClick={() => (window.location.href = "/application")}
+              >
                 <Icon name="FileText" size={20} />
                 Подать заявление
               </Button>

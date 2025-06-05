@@ -19,6 +19,7 @@ const Hero = () => {
           <Button
             size="lg"
             className="bg-white text-red-600 hover:bg-gray-100 font-semibold px-8"
+            onClick={() => (window.location.href = "/application")}
           >
             <Icon name="FileText" size={20} />
             Подать заявление
